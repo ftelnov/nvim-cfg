@@ -11,7 +11,9 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     -- LiveGrep with args is more powerful, as supports ripgrep filters.
-    ["<leader>fa"] = {":Telescope live_grep_args live_grep_args<CR>", "Telescope LiveGrep With Args"} 
+    ["<leader>fa"] = {":Telescope live_grep_args live_grep_args<CR>", "Telescope LiveGrep With Args"},
+    -- close quickfix ASAP.
+    ["cq"] = {":cclose<CR>"}
   },
   v = {
     [">"] = { ">gv", "indent"},
