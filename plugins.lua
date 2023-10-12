@@ -42,13 +42,13 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       {
-        "nvim-telescope/telescope-live-grep-args.nvim"
-      }
+        "nvim-telescope/telescope-live-grep-args.nvim",
+      },
     },
     config = function()
-      local telescope = require("telescope")
-      telescope.load_extension('live_grep_args')
-    end
+      local telescope = require "telescope"
+      telescope.load_extension "live_grep_args"
+    end,
   },
 
   -- Install a plugin
@@ -84,6 +84,11 @@ local plugins = {
     config = function()
       require("rust-tools").setup {}
     end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
   -- To make a plugin not be loaded
