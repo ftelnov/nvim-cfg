@@ -9,12 +9,11 @@ M.override = {
   Comment = {
     italic = true,
   },
+  NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  NvimTreeGitDirty = { fg = "blue", bold = true },
 }
 
 ---@type HLTable
-M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
-  NvimTreeGitModified = { fg = "cyan", bold = true},
-}
+M.add = {}
 
 return M
