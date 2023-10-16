@@ -2,17 +2,21 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-
   -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "stevearc/conform.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require "custom.configs.format"
+        end,
+      },
+      {
+        "mfussenegger/nvim-lint",
+        config = function()
+          require "custom.configs.linter"
         end,
       },
     },
@@ -62,27 +66,26 @@ local plugins = {
 
   {
     "simrat39/rust-tools.nvim",
-    opts = {
-      server = {
-        settings = {
-          ["rust-analyzer"] = {
-            check = {
-              command = "clippy",
-            },
-            inlayHints = {
-              parameterHints = true,
-            },
-            cmd_env = {
-              RUSTUP_TOOLCHAIN = "stable",
-            },
-          },
-        },
-      },
-    },
     after = "nvim-lspconfig",
     ft = "rust",
     config = function()
-      require("rust-tools").setup {}
+      require("rust-tools").setup {
+        server = {
+          settings = {
+            ["rust-analyzer"] = {
+              check = {
+                command = "clippy",
+              },
+              inlayHints = {
+                parameterHints = true,
+              },
+              cmd_env = {
+                RUSTUP_TOOLCHAIN = "stable",
+              },
+            },
+          },
+        },
+      }
     end,
   },
 

@@ -7,6 +7,7 @@
 -- })
 --
 local autocmd = vim.api.nvim_create_autocmd
+
 autocmd("FileType", {
   pattern = { "rust" },
   callback = function(ev)
@@ -15,3 +16,8 @@ autocmd("FileType", {
   end,
 })
 
+autocmd("BufWritePost", {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
