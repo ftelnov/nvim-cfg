@@ -21,3 +21,7 @@ autocmd("BufWritePost", {
     require("lint").try_lint()
   end,
 })
+
+vim.opt.spell = true
+vim.opt.spelloptions = "camel"
+vim.opt.spelllang = "en_us,ru_ru"
