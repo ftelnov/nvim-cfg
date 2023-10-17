@@ -10,6 +10,7 @@ require("conform").setup {
     javascript = { prettier },
     markdown = { "prettierd" },
     rust = { "rustfmt" },
+    go = { "gofmt" },
     -- Use the "_" filetype to run formatters on filetypes that don't
     -- have other formatters configured.
     ["_"] = { "trim_whitespace" },

@@ -11,6 +11,6 @@ lint.linters.clippy = {
 }
 
 lint.linters_by_ft = {
-  markdown = { "vale" },
   -- rust = { "clippy" },
+  markdown = { "markdownlint" },
 }
