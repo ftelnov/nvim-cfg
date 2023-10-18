@@ -8,12 +8,9 @@ require("conform").setup {
     python = { "black", "isort" },
     -- Use a sub-list to run only the first available formatter
     javascript = { prettier },
-    markdown = { "prettierd" },
+    markdown = { prettier },
     rust = { "rustfmt" },
     go = { "gofmt" },
-    -- Use the "_" filetype to run formatters on filetypes that don't
-    -- have other formatters configured.
-    ["_"] = { "trim_whitespace" },
   },
   -- If this is set, Conform will run the formatter on save.
   -- It will pass the table to conform.format().

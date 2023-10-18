@@ -55,6 +55,11 @@ M.general = {
       end,
       "Trouble Toggle Document Diagnostics",
     },
+
+    ["<leader>mp"] = {
+      ":MarkdownPreviewToggle<CR>",
+      "Markdown Preview Toggle",
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
