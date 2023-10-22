@@ -1,4 +1,4 @@
-local prettier = { "prettierd, prettier" }
+local prettier = { "prettierd", "prettier" }
 
 require("conform").setup {
   -- Map of filetype to formatters
@@ -8,6 +8,8 @@ require("conform").setup {
     python = { "black", "isort" },
     -- Use a sub-list to run only the first available formatter
     javascript = { prettier },
+    html = { prettier },
+    css = { prettier },
     markdown = { prettier },
     rust = { "rustfmt" },
     go = { "gofmt" },

@@ -1,16 +1,7 @@
 local lint = require "lint"
 
-lint.linters.clippy = {
-  cmd = "cargo",
-  stdin = false,
-  append_fname = false,
-  args = { "clippy" },
-  stream = nil,
-  ignore_exitcode = false,
-  env = nil,
-}
-
 lint.linters_by_ft = {
-  -- rust = { "clippy" },
+  html = { "tidy" },
+  css = { "stylelint" },
   markdown = { "markdownlint" },
 }

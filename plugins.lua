@@ -15,7 +15,7 @@ local plugins = {
       },
       {
         "mfussenegger/nvim-lint",
-        build = { "npm install -g markdownlint-cli" },
+        build = { "npm install -g markdownlint-cli", "npm install -g stylelint" },
         config = function()
           require "custom.configs.linter"
         end,
