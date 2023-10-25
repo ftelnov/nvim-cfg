@@ -70,23 +70,7 @@ local plugins = {
     after = "nvim-lspconfig",
     ft = "rust",
     config = function()
-      require("rust-tools").setup {
-        server = {
-          settings = {
-            ["rust-analyzer"] = {
-              check = {
-                command = "clippy",
-              },
-              inlayHints = {
-                parameterHints = true,
-              },
-              cmd_env = {
-                RUSTUP_TOOLCHAIN = "stable",
-              },
-            },
-          },
-        },
-      }
+      require("rust-tools").setup(_G.configs.rust_tools)
     end,
   },
 

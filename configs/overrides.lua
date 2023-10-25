@@ -50,8 +50,10 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
 
+  filters = { dotfiles = false, custom = { "^.git$" } },
   renderer = {
     highlight_git = true,
     icons = {

@@ -25,3 +25,6 @@ autocmd("BufWritePost", {
 vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = "en_us,ru_ru"
+vim.opt.exrc = true
+
+_G.configs = require "custom.configs.defaults"
