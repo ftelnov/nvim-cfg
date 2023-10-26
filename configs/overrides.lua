@@ -29,8 +29,6 @@ M.mason = {
     "clang-format",
 
     "lua-language-server",
-    "stylua",
-
     "gopls",
 
     -- misc
