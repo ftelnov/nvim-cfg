@@ -1,6 +1,11 @@
 local prettier = { "prettierd", "prettier" }
 
 require("conform").setup {
+  formatters = {
+    rustfmt = {
+      command = "cargo fmt",
+    },
+  },
   -- Map of filetype to formatters
   formatters_by_ft = {
     lua = { "stylua" },
