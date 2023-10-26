@@ -27,4 +27,7 @@ vim.opt.spelloptions = "camel"
 vim.opt.spelllang = "en_us,ru_ru"
 vim.opt.exrc = true
 
+-- prevent vim from ending trailing line in files.
+vim.opt.fixeol = false
+
 _G.configs = require "custom.configs.defaults"
