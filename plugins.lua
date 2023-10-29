@@ -88,6 +88,18 @@ local plugins = {
     end,
   },
 
+  -- for keeping only the most recent used buffers active.
+  {
+    "axkirillov/hbac.nvim",
+    config = function()
+      require("hbac").setup {
+        autoclose = true, -- set autoclose to false if you want to close manually
+        threshold = 7, -- hbac will start closing unedited buffers once that number is reached
+      }
+    end,
+    lazy = false,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
