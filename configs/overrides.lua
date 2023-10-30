@@ -27,6 +27,7 @@ M.mason = {
     "python-lsp-server",
     "clangd",
     "clang-format",
+    "fortls",
 
     "lua-language-server",
     "gopls",
@@ -41,6 +42,7 @@ M.mason = {
     "json-lsp",
     "yaml-language-server",
     "marksman",
+    "black",
   },
 }
 

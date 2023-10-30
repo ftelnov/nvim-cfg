@@ -16,6 +16,7 @@ require("conform").setup {
     html = { prettier },
     css = { prettier },
     markdown = { prettier },
+    json = { prettier },
     rust = { "rustfmt" },
     go = { "gofmt" },
   },
