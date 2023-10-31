@@ -29,6 +29,11 @@ M.mason = {
     "clang-format",
     "fortls",
 
+    -- shell
+    "bash-language-server",
+    "shellcheck",
+    "shfmt",
+
     "lua-language-server",
     "gopls",
 

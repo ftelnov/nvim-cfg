@@ -19,6 +19,8 @@ require("conform").setup {
     json = { prettier },
     rust = { "rustfmt" },
     go = { "gofmt" },
+    sh = { "shfmt" },
+    zsh = { "shfmt" },
   },
   -- If this is set, Conform will run the formatter on save.
   -- It will pass the table to conform.format().
