@@ -10,7 +10,7 @@ local plugins = {
       {
         "stevearc/conform.nvim",
         config = function()
-          require "custom.configs.format"
+          require("conform").setup(require("custom.configs.format").cfg)
         end,
       },
       {
@@ -70,7 +70,7 @@ local plugins = {
     after = "nvim-lspconfig",
     ft = "rust",
     config = function()
-      require("rust-tools").setup(_G.configs.rust_tools)
+      require("rust-tools").setup(_G.cfg.rust_tools)
     end,
   },
 

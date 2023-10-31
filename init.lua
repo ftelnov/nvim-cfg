@@ -30,4 +30,4 @@ vim.opt.exrc = true
 -- prevent vim from ending trailing line in files.
 vim.opt.fixeol = false
 
-_G.configs = require "custom.configs.defaults"
+_G.cfg = require "custom.configs"

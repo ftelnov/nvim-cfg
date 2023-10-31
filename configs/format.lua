@@ -1,6 +1,6 @@
 local prettier = { "prettierd", "prettier" }
 
-require("conform").setup {
+local default_cfg = {
   formatters = {
     rustfmt = {
       command = "cargo fmt",
@@ -30,4 +30,8 @@ require("conform").setup {
     lsp_fallback = true,
     timeout_ms = 500,
   },
+}
+
+return {
+  cfg = default_cfg,
 }

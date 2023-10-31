@@ -21,4 +21,5 @@ local rust_tools = {
 
 return {
   rust_tools = rust_tools,
+  format = require("custom.configs.format").cfg,
 }
