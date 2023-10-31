@@ -22,9 +22,18 @@ autocmd("BufWritePost", {
   end,
 })
 
+-- spellchecking
+
 vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = "en_us,ru_ru"
+
+autocmd("TermOpen", {
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+
 vim.opt.exrc = true
 
 -- prevent vim from ending trailing line in files.
