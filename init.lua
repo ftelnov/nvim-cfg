@@ -25,9 +25,9 @@ autocmd("BufWritePost", {
 autocmd("BufWritePost", {
   callback = function(ev)
     local state = require "hbac.state"
-    local hbac = require "hbac"
+    local actions = require "hbac.command.actions"
     if state.is_pinned(ev.buf) then
-      hbac.toggle_pin(ev.buf)
+      actions.toggle_pin(ev.buf)
     end
   end,
 })
