@@ -22,6 +22,16 @@ autocmd("BufWritePost", {
   end,
 })
 
+autocmd("BufWritePost", {
+  callback = function(ev)
+    local state = require "hbac.state"
+    local hbac = require "hbac"
+    if state.is_pinned(ev.buf) then
+      hbac.toggle_pin(ev.buf)
+    end
+  end,
+})
+
 -- spellchecking
 
 vim.opt.spell = true
