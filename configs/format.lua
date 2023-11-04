@@ -13,6 +13,8 @@ local default_cfg = {
     python = { "black", "isort" },
     -- Use a sub-list to run only the first available formatter
     javascript = { prettier },
+    typescript = { prettier },
+    typescriptreact = { prettier },
     html = { prettier },
     css = { prettier },
     markdown = { prettier },
