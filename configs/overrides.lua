@@ -37,11 +37,12 @@ M.mason = {
     "lua-language-server",
     "gopls",
 
-    -- misc
+    -- web stuff
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
     "prettier",
+    "eslint_d",
 
     -- formats
     "json-lsp",
