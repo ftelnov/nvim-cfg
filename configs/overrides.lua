@@ -12,6 +12,9 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "json",
+    "yaml",
+    "fortran",
   },
   indent = {
     enable = true,
