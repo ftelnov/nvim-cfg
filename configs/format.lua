@@ -1,10 +1,16 @@
 local prettier = { "prettierd", "prettier" }
 
+local fprettify = {
+  command = "fprettify",
+  args = { "--stdout", "--silent", "$FILENAME" },
+}
+
 local default_cfg = {
   formatters = {
     rustfmt = {
       command = "cargo fmt",
     },
+    fprettify = fprettify,
   },
   -- Map of filetype to formatters
   formatters_by_ft = {
@@ -23,12 +29,9 @@ local default_cfg = {
     go = { "gofmt" },
     sh = { "shfmt" },
     zsh = { "shfmt" },
+    fortran = { "fprettify" },
   },
-  -- If this is set, Conform will run the formatter on save.
-  -- It will pass the table to conform.format().
-  -- This can also be a function that returns the table.
-  format_on_save = {
-    -- I recommend these options. See :help conform.format for details.
+  format_after_save = {
     lsp_fallback = true,
     timeout_ms = 500,
   },

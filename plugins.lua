@@ -9,6 +9,7 @@ local plugins = {
       -- format & linting
       {
         "stevearc/conform.nvim",
+        build = { "pip install fprettify --break-system-packages" },
         config = function()
           require("conform").setup(require("custom.configs.format").cfg)
         end,
