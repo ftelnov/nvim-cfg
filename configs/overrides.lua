@@ -31,6 +31,7 @@ M.mason = {
     "clangd",
     "clang-format",
     "fortls",
+    "rust-analyzer",
 
     -- shell
     "bash-language-server",
