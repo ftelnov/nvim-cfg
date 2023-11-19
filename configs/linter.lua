@@ -10,4 +10,5 @@ lint.linters_by_ft = {
   javascript = { eslint },
   typescript = { eslint },
   typescriptreact = { eslint },
+  php = { "phpcs" },
 }

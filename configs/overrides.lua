@@ -45,6 +45,9 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "phpactor",
+    "phpcs",
+    "phpcbf",
     "prettier",
     "eslint_d",
 

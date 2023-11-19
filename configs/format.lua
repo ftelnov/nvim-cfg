@@ -23,6 +23,7 @@ local default_cfg = {
     typescriptreact = { prettier },
     html = { prettier },
     css = { prettier },
+    php = { "phpcsbf" },
     markdown = { prettier },
     json = { prettier },
     rust = { "rustfmt" },
