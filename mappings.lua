@@ -11,6 +11,11 @@ M.disabled = {
 
 M.general = {
   n = {
+    ["<leader><tab>"] = {
+      ":wincmd w<CR>",
+      "Focus on the floating window.",
+    },
+
     -- remaps
     ["<leader>fm"] = {
       function()
@@ -23,6 +28,12 @@ M.general = {
         require("gitsigns").toggle_deleted()
       end,
       "Show Git deleted lines",
+    },
+    ["<leader>gh"] = {
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      "Toggle Git preview for the current hunk.",
     },
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     -- LiveGrep with args is more powerful, as supports ripgrep filters.
