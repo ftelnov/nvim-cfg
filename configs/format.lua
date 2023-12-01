@@ -26,6 +26,7 @@ local default_cfg = {
     php = { "phpcsbf" },
     markdown = { prettier },
     json = { prettier },
+    yaml = { "yamlfmt" },
     rust = { "rustfmt" },
     go = { "gofmt" },
     sh = { "shfmt" },

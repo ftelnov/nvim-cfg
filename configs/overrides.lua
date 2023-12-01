@@ -54,6 +54,7 @@ M.mason = {
 
     -- formats
     "json-lsp",
+    "yamlfmt",
     "yaml-language-server",
     "marksman",
     "black",
