@@ -1,25 +1,18 @@
-local rust_tools = {
-  server = {
-    on_attach = function(client)
-      client.server_capabilities.semanticTokensProvider = nil
-    end,
-    settings = {
-      ["rust-analyzer"] = {
-        check = {
-          command = "clippy",
-        },
-        inlayHints = {
-          parameterHints = true,
-        },
-        cmd_env = {
-          RUSTUP_TOOLCHAIN = "stable",
-        },
-      },
+local rust_analyzer = {
+  ["rust-analyzer"] = {
+    check = {
+      command = "clippy",
+    },
+    inlayHints = {
+      parameterHints = { enable = true },
+    },
+    cmd_env = {
+      RUSTUP_TOOLCHAIN = "stable",
     },
   },
 }
 
 return {
-  rust_tools = rust_tools,
+  rust_analyzer = rust_analyzer,
   format = require("custom.configs.format").cfg,
 }

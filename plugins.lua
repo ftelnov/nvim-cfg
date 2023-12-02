@@ -67,15 +67,6 @@ local plugins = {
   },
 
   {
-    "simrat39/rust-tools.nvim",
-    after = "nvim-lspconfig",
-    ft = "rust",
-    config = function()
-      require("rust-tools").setup(_G.cfg.rust_tools)
-    end,
-  },
-
-  {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
