@@ -16,6 +16,13 @@ M.general = {
       "Focus on the floating window.",
     },
 
+    ["gt"] = {
+      function()
+        vim.lsp.buf.type_definition()
+      end,
+      "LSP: go to current symbol's type definition.",
+    },
+
     -- remaps
     ["<leader>fm"] = {
       function()
