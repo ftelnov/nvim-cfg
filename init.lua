@@ -37,6 +37,7 @@ autocmd("BufWritePost", {
 vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = "en_us,ru_ru"
+vim.o.foldenable = false
 
 autocmd("TermOpen", {
   callback = function()

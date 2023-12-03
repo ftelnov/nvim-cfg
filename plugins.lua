@@ -82,6 +82,10 @@ local plugins = {
 
   { "tpope/vim-abolish", lazy = false },
 
+  {
+    import = "custom.plugins",
+  },
+
   -- -- for keeping only the most recent used buffers active.
   -- {
   --   "axkirillov/hbac.nvim",

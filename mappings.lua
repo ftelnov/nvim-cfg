@@ -15,7 +15,18 @@ M.general = {
       ":wincmd w<CR>",
       "Focus on the floating window.",
     },
-
+    ["<leader>tf"] = {
+      function()
+        local new_value = not vim.api.nvim_get_option_value("foldenable", {})
+        local ufo = require "ufo"
+        vim.api.nvim_set_option_value("foldenable", new_value, {})
+        if new_value then
+          ufo.openAllFolds()
+        else
+          ufo.closeAllFolds()
+        end
+      end,
+    },
     ["gt"] = {
       function()
         vim.lsp.buf.type_definition()
