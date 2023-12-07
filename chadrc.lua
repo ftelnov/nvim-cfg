@@ -59,6 +59,9 @@ M.ui = {
   hl_add = highlights.add,
 
   statusline = statusline_override(),
+  tabufline = {
+    enabled = false,
+  },
 }
 
 M.plugins = "custom.plugins"
