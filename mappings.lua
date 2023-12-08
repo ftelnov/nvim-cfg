@@ -6,11 +6,22 @@ M.disabled = {
     ["<leader>fm"] = "",
     ["<leader>fa"] = "",
     ["<leader>td"] = "",
+    ["<tab>"] = "",
+    ["<S-tab>"] = "",
   },
 }
 
 M.general = {
   n = {
+    ["<tab>"] = {
+      ":bnext<CR>",
+      "Goto next buffer",
+    },
+    ["<S-tab>"] = {
+      ":bprev<CR>",
+      "Goto prev buffer",
+    },
+
     ["<leader><tab>"] = {
       ":wincmd w<CR>",
       "Focus on the floating window.",
