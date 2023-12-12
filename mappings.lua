@@ -8,6 +8,7 @@ M.disabled = {
     ["<leader>td"] = "",
     ["<tab>"] = "",
     ["<S-tab>"] = "",
+    ["<leader>x"] = "",
   },
 }
 
@@ -21,7 +22,10 @@ M.general = {
       ":bprev<CR>",
       "Goto prev buffer",
     },
-
+    ["<leader>x"] = {
+      ":bd<CR>",
+      "Close current buffer",
+    },
     ["<leader><tab>"] = {
       ":wincmd w<CR>",
       "Focus on the floating window.",
