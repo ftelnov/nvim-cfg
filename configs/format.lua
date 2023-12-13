@@ -7,9 +7,6 @@ local fprettify = {
 
 local default_cfg = {
   formatters = {
-    rustfmt = {
-      command = "cargo fmt",
-    },
     fprettify = fprettify,
   },
   -- Map of filetype to formatters
