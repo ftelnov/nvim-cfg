@@ -75,25 +75,19 @@ M.general = {
     ["cq"] = { ":cclose<CR>" },
 
     -- Troubles checks.
-    ["<leader>tt"] = {
-      function()
-        require("trouble").toggle()
-      end,
-      "Trouble Toggle",
-    },
-    ["<leader>tl"] = {
+    ["<leader>dl"] = {
       function()
         require("trouble").toggle "loclist"
       end,
       "Trouble Toggle Loclist",
     },
-    ["<leader>tw"] = {
+    ["<leader>dw"] = {
       function()
         require("trouble").toggle "workspace_diagnostics"
       end,
       "Trouble Toggle Workspace Diagnostics",
     },
-    ["<leader>td"] = {
+    ["<leader>dd"] = {
       function()
         require("trouble").toggle "document_diagnostics"
       end,
@@ -103,6 +97,30 @@ M.general = {
     ["<leader>mp"] = {
       ":MarkdownPreviewToggle<CR>",
       "Markdown Preview Toggle",
+    },
+    ["<leader>tt"] = {
+      function()
+        require("neotest").run.run()
+      end,
+      "Run the nearest test.",
+    },
+    ["<leader>td"] = {
+      function()
+        require("neotest").run.run(vim.fn.expand "%")
+      end,
+      "Run tests in the current file.",
+    },
+    ["<leader>tw"] = {
+      function()
+        require("neotest").watch.watch()
+      end,
+      "Watch tests.",
+    },
+    ["<leader>to"] = {
+      function()
+        require("neotest").output.open { enter = true }
+      end,
+      "Show test output.",
     },
   },
   v = {

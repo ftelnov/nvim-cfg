@@ -22,6 +22,7 @@ local plugins = {
         end,
       },
     },
+    build = { "cargo install cargo-binstall && cargo binstall cargo-nextest -y --secure" },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
