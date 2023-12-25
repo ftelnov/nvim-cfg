@@ -120,7 +120,25 @@ M.general = {
       function()
         require("neotest").output.open { enter = true }
       end,
-      "Show test output.",
+      "Show nearest test output.",
+    },
+    ["<leader>ts"] = {
+      function()
+        require("neotest").summary.toggle {}
+      end,
+      "Toggle tests summary.",
+    },
+    ["<leader>ta"] = {
+      function()
+        require("neotest").run.attach {}
+      end,
+      "Attach to the current test.",
+    },
+    ["<leader>tk"] = {
+      function()
+        require("neotest").run.stop()
+      end,
+      "Kill nearest test.",
     },
   },
   v = {
