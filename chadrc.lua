@@ -66,6 +66,14 @@ M.ui = {
 
 M.plugins = "custom.plugins"
 
+M.lazy_nvim = {
+  git = {
+    timeout = 600,
+  },
+}
+
+M.ui.extended_integrations = { "trouble", "notify" }
+
 -- check core.mappings for table structure
 M.mappings = require "custom.mappings"
 

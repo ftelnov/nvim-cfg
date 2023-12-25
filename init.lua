@@ -50,4 +50,9 @@ vim.opt.exrc = true
 -- prevent vim from ending trailing line in files.
 vim.opt.fixeol = false
 
+-- needed for notify and other plugins.
+-- https://github.com/neovim/neovim/issues/2528#issuecomment-236373505
+vim.opt.termguicolors = true
+vim.opt.showcmd = false
+
 _G.cfg = require "custom.configs"
