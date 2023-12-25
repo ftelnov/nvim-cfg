@@ -56,3 +56,4 @@ vim.opt.termguicolors = true
 vim.opt.showcmd = false
 
 _G.cfg = require "custom.configs"
+require "custom.env"
