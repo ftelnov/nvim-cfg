@@ -52,8 +52,8 @@ local function statusline_override()
 end
 
 M.ui = {
-  theme = "one_light",
-  theme_toggle = { "one_light", "one_light" },
+  theme = "github_light",
+  theme_toggle = { "github_light", "github_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
