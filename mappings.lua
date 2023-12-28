@@ -3,12 +3,12 @@ local M = {}
 
 M.disabled = {
   n = {
-    ["<leader>fm"] = "",
     ["<leader>fa"] = "",
     ["<leader>td"] = "",
     ["<tab>"] = "",
     ["<S-tab>"] = "",
     ["<leader>x"] = "",
+    ["<C-s>"] = "",
   },
 }
 
@@ -50,12 +50,7 @@ M.general = {
     },
 
     -- remaps
-    ["<leader>fm"] = {
-      function()
-        require("conform").format()
-      end,
-      "Format with conform",
-    },
+    ["<C-s>"] = { "<cmd>wa <CR>", "Save all files." },
     ["<leader>sd"] = {
       function()
         require("gitsigns").toggle_deleted()

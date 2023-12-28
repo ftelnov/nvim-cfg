@@ -6,14 +6,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- format & linting
-      {
-        "stevearc/conform.nvim",
-        build = { "pip install fprettify --user" },
-        config = function()
-          require("conform").setup(require("custom.configs.format").cfg)
-        end,
-      },
+      -- linting
       {
         "mfussenegger/nvim-lint",
         build = { "npm install -g markdownlint-cli", "npm install -g stylelint" },
