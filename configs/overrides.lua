@@ -15,6 +15,7 @@ M.treesitter = {
     "json",
     "yaml",
     "fortran",
+    "rust",
   },
   indent = {
     enable = true,
