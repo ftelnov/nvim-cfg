@@ -14,5 +14,5 @@ local rust_analyzer = {
 
 return {
   rust_analyzer = rust_analyzer,
-  format = require("custom.configs.format").cfg,
+  format = require("configs.format").cfg,
 }

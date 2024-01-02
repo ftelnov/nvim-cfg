@@ -7,7 +7,7 @@ return {
       "mfussenegger/nvim-lint",
       build = { "npm install -g markdownlint-cli", "npm install -g stylelint" },
       config = function()
-        require "custom.configs.linter"
+        require "configs.linter"
       end,
     },
     {
@@ -18,6 +18,6 @@ return {
   build = { "cargo install cargo-binstall && cargo binstall cargo-nextest -y --secure" },
   config = function()
     require "plugins.configs.lspconfig"
-    require "custom.configs.lspconfig"
+    require "configs.lspconfig"
   end,
 }

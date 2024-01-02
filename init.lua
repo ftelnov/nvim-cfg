@@ -59,5 +59,5 @@ vim.api.nvim_set_hl(0, "Comment", { italic = true })
 vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "green", bold = true })
 vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "blue", bold = true })
 
-_G.cfg = require "custom.configs"
-require "custom.env"
+_G.cfg = require "configs"
+require "env"

@@ -4,7 +4,7 @@ return {
   event = "VeryLazy",
   build = { "pip install fprettify --user" },
   config = function()
-    require("conform").setup(require("custom.configs.format").cfg)
+    require("conform").setup(require("configs.format").cfg)
   end,
   keys = {
     {

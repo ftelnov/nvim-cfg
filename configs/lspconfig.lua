@@ -1,6 +1,6 @@
 local default_on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
-local configs = require "custom.configs"
+local configs = require "configs"
 
 local lspconfig = require "lspconfig"
 
