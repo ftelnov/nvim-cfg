@@ -41,6 +41,7 @@ M.mason = {
     "shfmt",
 
     "lua-language-server",
+    "luacheck",
     "gopls",
 
     -- web stuff

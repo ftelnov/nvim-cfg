@@ -11,4 +11,5 @@ lint.linters_by_ft = {
   typescript = { eslint },
   typescriptreact = { eslint },
   php = { "phpcs" },
+  lua = { "luacheck" },
 }
