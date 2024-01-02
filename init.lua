@@ -6,6 +6,7 @@
 --   command = "tabdo wincmd =",
 -- })
 --
+require("lazy_cfg")
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("FileType", {
