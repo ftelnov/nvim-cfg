@@ -15,4 +15,8 @@ require("lazy").setup({
   {
     import = "custom.plugins",
   },
-}, {})
+}, {
+  git = {
+    timeout = 600,
+  },
+})
