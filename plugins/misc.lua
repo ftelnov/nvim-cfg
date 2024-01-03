@@ -17,5 +17,6 @@ return {
         },
     },
 
-    { "tpope/vim-abolish", lazy = false },
+    { "tpope/vim-abolish", event = "VeryLazy" },
+    { "tpope/vim-surround", event = "InsertEnter" },
 }
