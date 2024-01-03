@@ -1,10 +1,8 @@
 local lspconfig = require("lspconfig")
-local default_on_attach = lspconfig.on_attach
 local capabilities = nil
 local configs = require("configs")
 
 local function on_attach(client, buf_nr)
-	default_on_attach(client, buf_nr)
 	if client.server_capabilities.inlayHintProvider then
 		vim.lsp.inlay_hint.enable(buf_nr, true)
 	end

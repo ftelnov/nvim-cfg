@@ -7,20 +7,21 @@
 -- })
 --
 require("lazy_cfg")
+require("mappings")
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("FileType", {
-  pattern = { "rust" },
-  callback = function(ev)
-    local utils = require "core.utils"
-    utils.load_mappings("lspconfig", { buffer = ev.buf })
-  end,
+	pattern = { "rust" },
+	callback = function(ev)
+		local utils = require("core.utils")
+		utils.load_mappings("lspconfig", { buffer = ev.buf })
+	end,
 })
 
 autocmd("BufWritePost", {
-  callback = function()
-    require("lint").try_lint()
-  end,
+	callback = function()
+		require("lint").try_lint()
+	end,
 })
 
 -- autocmd("BufWritePost", {
@@ -41,9 +42,9 @@ vim.opt.spelllang = "en_us,ru_ru"
 vim.o.foldenable = false
 
 autocmd("TermOpen", {
-  callback = function()
-    vim.opt_local.spell = false
-  end,
+	callback = function()
+		vim.opt_local.spell = false
+	end,
 })
 
 vim.opt.exrc = true
@@ -60,5 +61,5 @@ vim.api.nvim_set_hl(0, "Comment", { italic = true })
 vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "green", bold = true })
 vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "blue", bold = true })
 
-_G.cfg = require "configs"
-require "env"
+_G.cfg = require("configs")
+require("env")
