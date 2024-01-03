@@ -63,51 +63,9 @@ M.general = {
         -- close quickfix ASAP.
         ["cq"] = { ":cclose<CR>" },
 
-        -- Troubles checks.
-        ["<leader>dl"] = {
-            function() require("trouble").toggle("loclist") end,
-            "Trouble Toggle Loclist",
-        },
-        ["<leader>dw"] = {
-            function() require("trouble").toggle("workspace_diagnostics") end,
-            "Trouble Toggle Workspace Diagnostics",
-        },
-        ["<leader>dd"] = {
-            function() require("trouble").toggle("document_diagnostics") end,
-            "Trouble Toggle Document Diagnostics",
-        },
-
         ["<leader>mp"] = {
             ":MarkdownPreviewToggle<CR>",
             "Markdown Preview Toggle",
-        },
-        ["<leader>tt"] = {
-            function() require("neotest").run.run() end,
-            "Run the nearest test.",
-        },
-        ["<leader>td"] = {
-            function() require("neotest").run.run(vim.fn.expand("%")) end,
-            "Run tests in the current file.",
-        },
-        ["<leader>tw"] = {
-            function() require("neotest").watch.watch() end,
-            "Watch tests.",
-        },
-        ["<leader>to"] = {
-            function() require("neotest").output.open({ enter = true }) end,
-            "Show nearest test output.",
-        },
-        ["<leader>ts"] = {
-            function() require("neotest").summary.toggle({}) end,
-            "Toggle tests summary.",
-        },
-        ["<leader>ta"] = {
-            function() require("neotest").run.attach({}) end,
-            "Attach to the current test.",
-        },
-        ["<leader>tk"] = {
-            function() require("neotest").run.stop() end,
-            "Kill nearest test.",
         },
     },
     v = {

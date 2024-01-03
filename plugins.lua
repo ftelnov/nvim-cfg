@@ -92,32 +92,6 @@ local plugins = {
     {
         import = "custom.plugins",
     },
-
-    -- -- for keeping only the most recent used buffers active.
-    -- {
-    --   "axkirillov/hbac.nvim",
-    --   config = function()
-    --     require("hbac").setup {
-    --       autoclose = true, -- set autoclose to false if you want to close manually
-    --       threshold = 7, -- hbac will start closing unedited buffers once that number is reached
-    --     }
-    --   end,
-    --   lazy = false,
-    -- },
-    --
-    -- To make a plugin not be loaded
-    -- {
-    --   "NvChad/nvim-colorizer.lua",
-    --   enabled = false
-    -- },
-
-    -- All NvChad plugins are lazy-loaded by default
-    -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-    -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-    -- {
-    --   "mg979/vim-visual-multi",
-    --   lazy = false,
-    -- }
 }
 
 return plugins
