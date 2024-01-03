@@ -1,8 +1,8 @@
 ---@type NvPluginSpec
 return {
-  "sindrets/diffview.nvim",
-  lazy = false,
-  -- config = function()
-  --
-  -- end,
+    "sindrets/diffview.nvim",
+    lazy = false,
+    -- config = function()
+    --
+    -- end,
 }

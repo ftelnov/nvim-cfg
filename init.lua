@@ -9,17 +9,15 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("FileType", {
-  pattern = { "rust" },
-  callback = function(ev)
-    local utils = require "core.utils"
-    utils.load_mappings("lspconfig", { buffer = ev.buf })
-  end,
+    pattern = { "rust" },
+    callback = function(ev)
+        local utils = require("core.utils")
+        utils.load_mappings("lspconfig", { buffer = ev.buf })
+    end,
 })
 
 autocmd("BufWritePost", {
-  callback = function()
-    require("lint").try_lint()
-  end,
+    callback = function() require("lint").try_lint() end,
 })
 
 -- autocmd("BufWritePost", {
@@ -40,9 +38,7 @@ vim.opt.spelllang = "en_us,ru_ru"
 vim.o.foldenable = false
 
 autocmd("TermOpen", {
-  callback = function()
-    vim.opt_local.spell = false
-  end,
+    callback = function() vim.opt_local.spell = false end,
 })
 
 vim.opt.exrc = true
@@ -55,5 +51,5 @@ vim.opt.fixeol = false
 vim.opt.termguicolors = true
 vim.opt.showcmd = false
 
-_G.cfg = require "custom.configs"
-require "custom.env"
+_G.cfg = require("custom.configs")
+require("custom.env")
