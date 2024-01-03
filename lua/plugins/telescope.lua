@@ -29,4 +29,7 @@ return {
     telescope.load_extension "live_grep_args"
     telescope.load_extension "smart_history"
   end,
+  keys = {
+    { "<leader>fa", ":Telescope live_grep_args live_grep_args<CR>", desc = "Telescope LiveGrep With Args" }
+  }
 }

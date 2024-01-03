@@ -9,11 +9,7 @@ return {
       config = function()
         require "configs.linter"
       end,
-    },
-    {
-      "folke/trouble.nvim",
-      dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
+    }
   },
   build = { "cargo install cargo-binstall && cargo binstall cargo-nextest -y --secure" },
   config = function()
