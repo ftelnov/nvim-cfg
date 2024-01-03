@@ -24,11 +24,21 @@ return {
     {
         "mfussenegger/nvim-lint",
         build = { "npm install -g markdownlint-cli", "npm install -g stylelint" },
-        config = function() require("configs.linter") end,
+        config = function() require("custom.configs.linter") end,
     },
     {
         "neovim/nvim-lspconfig",
         build = { "cargo install cargo-binstall && cargo binstall cargo-nextest -y --secure" },
-        config = function() require("configs.lspconfig") end,
+        config = function()
+            require("plugins.configs.lspconfig")
+            require("custom.configs.lspconfig")
+        end,
+        keys = {
+            {
+                "gt",
+                function() vim.lsp.buf.type_definition() end,
+                { desc = "LSP: go to current symbol's type definition." },
+            },
+        },
     },
 }

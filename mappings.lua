@@ -30,25 +30,9 @@ M.general = {
             ":wincmd w<CR>",
             "Focus on the floating window.",
         },
-        ["<leader>tf"] = {
-            function()
-                local new_value = not vim.api.nvim_get_option_value("foldenable", {})
-                local ufo = require("ufo")
-                vim.api.nvim_set_option_value("foldenable", new_value, {})
-                if new_value then
-                    ufo.openAllFolds()
-                else
-                    ufo.closeAllFolds()
-                end
-            end,
-        },
-        ["gt"] = {
-            function() vim.lsp.buf.type_definition() end,
-            "LSP: go to current symbol's type definition.",
-        },
 
-        -- remaps
         ["<C-s>"] = { "<cmd>wa <CR>", "Save all files." },
+
         ["<leader>sd"] = {
             function() require("gitsigns").toggle_deleted() end,
             "Show Git deleted lines",
@@ -58,15 +42,9 @@ M.general = {
             "Toggle Git preview for the current hunk.",
         },
         [";"] = { ":", "enter command mode", opts = { nowait = true } },
-        -- LiveGrep with args is more powerful, as supports ripgrep filters.
-        ["<leader>fa"] = { ":Telescope live_grep_args live_grep_args<CR>", "Telescope LiveGrep With Args" },
+
         -- close quickfix ASAP.
         ["cq"] = { ":cclose<CR>" },
-
-        ["<leader>mp"] = {
-            ":MarkdownPreviewToggle<CR>",
-            "Markdown Preview Toggle",
-        },
     },
     v = {
         [">"] = { ">gv", "indent" },
