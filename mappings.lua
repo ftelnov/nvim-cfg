@@ -23,7 +23,7 @@ M.general = {
             "Goto prev buffer",
         },
         ["<leader>x"] = {
-            ":bd<CR>",
+            ":Bdelete<CR>",
             "Close current buffer",
         },
         ["<leader><tab>"] = {

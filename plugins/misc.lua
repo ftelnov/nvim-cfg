@@ -19,4 +19,6 @@ return {
 
     { "tpope/vim-abolish", event = "VeryLazy" },
     { "tpope/vim-surround", event = "InsertEnter" },
+
+    { "moll/vim-bbye", event = "VeryLazy" },
 }
