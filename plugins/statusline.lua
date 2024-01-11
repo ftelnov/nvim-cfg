@@ -79,7 +79,10 @@ return {
                 section_separators = { left = "", right = "" },
             },
             sections = process_sections({
-                lualine_a = { "mode", { buffer_number, color = { fg = colors.fg, bg = colors.gray3 } } },
+                lualine_a = {
+                    "mode",
+                    -- { buffer_number, color = { fg = colors.fg, bg = colors.gray3 } }
+                },
                 lualine_b = {
                     "branch",
                     "diff",
