@@ -41,4 +41,26 @@ return {
             },
         },
     },
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^3",
+        ft = { "rust" },
+        event = { "VeryLazy" },
+        dependencies = { "neovim/nvim-lspconfig" },
+        config = function()
+            local configs = require("custom.configs")
+            local lsp_cfg = require("custom.configs.lspconfig")
+
+            vim.g.rustaceanvim = {
+                server = {
+                    on_attach = function(client, buf_nr)
+                        lsp_cfg.on_attach(client, buf_nr)
+                        vim.lsp.inlay_hint.enable(buf_nr, true)
+                    end,
+                    capabilities = lsp_cfg.capabilities,
+                    settings = configs.rust_analyzer,
+                },
+            }
+        end,
+    },
 }

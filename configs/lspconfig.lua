@@ -1,8 +1,7 @@
-local default_on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
-local configs = require("custom.configs")
-
 local lspconfig = require("lspconfig")
+local nv_lsp = require("plugins.configs.lspconfig")
+local default_on_attach = nv_lsp.on_attach
+local capabilities = nv_lsp.capabilities
 
 local function on_attach(client, buf_nr)
     default_on_attach(client, buf_nr)
@@ -26,7 +25,6 @@ local servers = {
     "fortls",
     "phpactor",
     "asm_lsp",
-    "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
@@ -36,14 +34,13 @@ for _, lsp in ipairs(servers) do
     })
 end
 
-lspconfig.rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = configs.rust_analyzer,
-})
-
 lspconfig.bashls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "sh", "zsh" },
 })
+
+return {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
