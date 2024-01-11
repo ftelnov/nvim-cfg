@@ -45,6 +45,7 @@ M.general = {
 
         -- close quickfix ASAP.
         ["cq"] = { ":cclose<CR>" },
+        ["<leader>q"] = { ":tabclose<CR>", "Close current tabpage." },
     },
     v = {
         [">"] = { ">gv", "indent" },

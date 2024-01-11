@@ -33,5 +33,8 @@ return {
                 },
             })
         end,
+        keys = {
+            { "<leader>gv", ":DiffviewOpen<CR>", desc = "Open diffview." },
+        },
     },
 }
