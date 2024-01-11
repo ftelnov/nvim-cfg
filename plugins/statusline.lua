@@ -55,6 +55,8 @@ local function search_result()
     return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
 end
 
+local function buffer_number() return vim.api.nvim_get_current_buf() end
+
 local function modified()
     if vim.bo.modified then
         return "+"
@@ -77,7 +79,7 @@ return {
                 section_separators = { left = "", right = "" },
             },
             sections = process_sections({
-                lualine_a = { "mode" },
+                lualine_a = { "mode", { buffer_number, color = { fg = colors.fg, bg = colors.gray3 } } },
                 lualine_b = {
                     "branch",
                     "diff",

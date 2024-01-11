@@ -24,8 +24,14 @@ return {
     {
         "sindrets/diffview.nvim",
         lazy = false,
-        -- config = function()
-        --
-        -- end,
+        config = function()
+            require("diffview").setup({
+                view = {
+                    merge_tool = {
+                        layout = "diff3_mixed",
+                    },
+                },
+            })
+        end,
     },
 }
