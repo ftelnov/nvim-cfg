@@ -1,8 +1,10 @@
+local utils = require("custom.utils")
+
 ---@type NvPluginSpec
 return {
     "stevearc/conform.nvim",
     event = "VeryLazy",
-    build = { "pip install fprettify --user" },
+    build = { utils.pip_global_pkg("fprettify") },
     config = function() require("conform").setup(require("custom.configs.format").cfg) end,
     keys = {
         {
