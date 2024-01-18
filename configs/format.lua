@@ -8,6 +8,10 @@ local fprettify = {
 local default_cfg = {
     formatters = {
         fprettify = fprettify,
+        rustfmt = {
+            command = "rustfmt",
+            args = { "--edition", "2021", "--emit", "stdout" },
+        },
     },
     -- Map of filetype to formatters
     formatters_by_ft = {
