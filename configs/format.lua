@@ -35,7 +35,6 @@ local default_cfg = {
         fortran = { "fprettify" },
     },
     format_after_save = {
-        lsp_fallback = true,
         timeout_ms = 500,
     },
 }
