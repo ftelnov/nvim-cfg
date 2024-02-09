@@ -21,4 +21,15 @@ return {
     { "tpope/vim-surround", event = "InsertEnter" },
 
     { "moll/vim-bbye", event = "VeryLazy" },
+
+    -- For ASCII sequence coloring.
+    {
+        "m00qek/baleia.nvim",
+        event = "VeryLazy",
+        tag = "v1.4.0",
+        config = function()
+            local baleia = require("baleia").setup({})
+            vim.api.nvim_create_user_command("AsciiRender", function() baleia.once(vim.fn.bufnr("%")) end, {})
+        end,
+    },
 }
