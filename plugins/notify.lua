@@ -3,8 +3,6 @@ return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     config = function()
-        dofile(vim.g.base46_cache .. "notify")
-
         vim.notify = require("notify")
         require("notify").setup({
             level = 2,
