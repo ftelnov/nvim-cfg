@@ -11,10 +11,31 @@ return {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
+        config = function()
+            vim.fn["mkdp#util#install"]()
+            -- it is needed to work correctly with "clipboard-image".
+            vim.g.mkdp_images_path = vim.fn.getcwd()
+        end,
         keys = {
             { "<leader>mp", ":MarkdownPreviewToggle<CR>", desc = "Markdown Preview Toggle" },
         },
+    },
+
+    {
+        "dfendr/clipboard-image.nvim",
+        ft = { "markdown" },
+        config = function()
+            require("clipboard-image").setup({
+                default = {
+                    img_name = function()
+                        vim.fn.inputsave()
+                        local name = vim.fn.input("Name: ")
+                        vim.fn.inputrestore()
+                        return name
+                    end,
+                },
+            })
+        end,
     },
 
     { "tpope/vim-abolish", event = "VeryLazy" },
