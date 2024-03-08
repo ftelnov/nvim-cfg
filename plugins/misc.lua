@@ -13,8 +13,14 @@ return {
         ft = { "markdown" },
         config = function()
             vim.fn["mkdp#util#install"]()
-            -- it is needed to work correctly with "clipboard-image".
-            vim.g.mkdp_images_path = vim.fn.getcwd()
+            local autocmd = vim.api.nvim_create_autocmd
+
+            -- it is needed to work correctly with "clipboard-image",
+            -- for md file images should be found relatively, just as Github does.
+            autocmd("FileType", {
+                pattern = { "md" },
+                callback = function(_) vim.g.mkdp_images_path = vim.fn.expand("%") end,
+            })
         end,
         keys = {
             { "<leader>mp", ":MarkdownPreviewToggle<CR>", desc = "Markdown Preview Toggle" },
@@ -27,6 +33,7 @@ return {
         config = function()
             require("clipboard-image").setup({
                 default = {
+                    img_dir = { "%:p:h", "img" },
                     img_name = function()
                         vim.fn.inputsave()
                         local name = vim.fn.input("Name: ")
