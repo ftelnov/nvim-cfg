@@ -36,6 +36,7 @@ local default_cfg = {
     },
     format_after_save = {
         timeout_ms = 500,
+        lsp_fallback = true,
     },
 }
 

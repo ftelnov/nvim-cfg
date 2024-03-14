@@ -19,6 +19,11 @@ return {
             },
             { "<leader>gl", ":.GBrowse!<CR>", desc = "Copy Git remote link to the current line." },
             { "<leader>gp", ":Git -c push.default=current push<CR>", desc = "Git push with automatic upstream" },
+            {
+                "<leader>gfp",
+                ":Git -c push.default=current push --force<CR>",
+                desc = "Git force push with automatic upstream",
+            },
         },
     },
     {
