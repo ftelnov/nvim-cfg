@@ -1,3 +1,25 @@
+local function showFugitiveGit()
+    if vim.fn.FugitiveHead() ~= "" then
+        vim.cmd([[
+    Git
+    " wincmd H  " Open Git window in vertical split
+    " setlocal winfixwidth
+    " vertical resize 31
+    " setlocal winfixwidth
+    setlocal nonumber
+    setlocal norelativenumber
+    ]])
+    end
+end
+
+local function toggleFugitiveGit()
+    if vim.fn.buflisted(vim.fn.bufname("fugitive:///*/.git//$")) ~= 0 then
+        vim.cmd([[ execute ":bdelete" bufname('fugitive:///*/.git//$') ]])
+    else
+        showFugitiveGit()
+    end
+end
+
 ---@type LazySpec
 return {
     {
@@ -12,6 +34,11 @@ return {
         },
         keys = {
             {
+                "<leader>g",
+                toggleFugitiveGit,
+                desc = "Open vim fugitive panel",
+            },
+            {
                 "<leader>gl",
                 ":'<'>GBrowse!<CR>",
                 desc = "Copy Git remote link to the selected lines.",
@@ -25,6 +52,22 @@ return {
                 desc = "Git force push with automatic upstream",
             },
         },
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        lazy = false,
+        config = function()
+            require("gitsigns").setup({
+                signs = {
+                    add = { text = "┃" },
+                    change = { text = "┃" },
+                    delete = { text = "_" },
+                    topdelete = { text = "‾" },
+                    changedelete = { text = "~" },
+                    untracked = { text = "┇" },
+                },
+            })
+        end,
     },
     {
         "sindrets/diffview.nvim",
