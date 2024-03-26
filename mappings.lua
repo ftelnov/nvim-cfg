@@ -9,6 +9,7 @@ M.disabled = {
         ["<S-tab>"] = "",
         ["<leader>x"] = "",
         ["<C-s>"] = "",
+        ["<leader>h"] = "",
     },
 }
 
@@ -40,6 +41,10 @@ M.general = {
         ["<leader>gh"] = {
             function() require("gitsigns").preview_hunk() end,
             "Toggle Git preview for the current hunk.",
+        },
+        ["<leader>hr"] = {
+            function() require("gitsigns").reset_hunk() end,
+            "Reset current hunk",
         },
         [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
