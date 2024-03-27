@@ -34,6 +34,7 @@ M.mason = {
         "fortls",
         "rust-analyzer",
         "asm-lsp",
+        "codelldb",
 
         -- shell
         "bash-language-server",

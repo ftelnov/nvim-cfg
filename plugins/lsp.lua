@@ -1,3 +1,4 @@
+local utils = require("custom.utils")
 ---@type LazySpec
 return {
     {
@@ -51,7 +52,12 @@ return {
             local configs = require("custom.configs")
             local lsp_cfg = require("custom.configs.lspconfig")
 
+            local cfg = require("rustaceanvim.config")
+            local lldb_path = utils.codelldb_path()
             vim.g.rustaceanvim = {
+                dap = {
+                    adapter = cfg.get_codelldb_adapter(lldb_path.codelldb_path, lldb_path.liblldb_path),
+                },
                 server = {
                     on_attach = function(client, buf_nr)
                         lsp_cfg.on_attach(client, buf_nr)
