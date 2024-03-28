@@ -7,8 +7,21 @@ return {
         event = "VeryLazy",
         keys = {
             { "<leader>pc", function() require("dap").continue() end, desc = "Debug continue" },
-            { "<leader>b", function() require("dap").toggle_breakpoint() end, desc = "Debug toggle breakpoint" },
-            { "<leader>B", function() require("dap").set_breakpoint() end, desc = "Debug set breakpoint" },
+            {
+                "<leader>b",
+                function() require("persistent-breakpoints.api").toggle_breakpoint() end,
+                desc = "Debug toggle breakpoint",
+            },
+            {
+                "<leader>B",
+                function() require("persistent-breakpoints.api").set_conditional_breakpoint() end,
+                desc = "Debug set conditional breakpoint",
+            },
+            {
+                "<leader>bc",
+                function() require("persistent-breakpoints.api").clear_all_breakpoints() end,
+                desc = "Debug clear all breakpoints",
+            },
             {
                 "<leader>pm",
                 function() require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
@@ -46,15 +59,38 @@ return {
                 },
             }
 
+            dap.adapters.gdb = {
+                type = "executable",
+                command = "rust-gdb",
+                args = { "-i", "dap" },
+            }
+
             dap.configurations.rust = {
                 {
-                    name = "Attach to process",
+                    name = "Attach to process (gdb)",
+                    type = "gdb",
+                    request = "attach",
+                    pid = require("dap.utils").pick_process,
+                },
+                {
+                    name = "Launch (gdb)",
+                    type = "gdb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = false,
+                    args = {},
+                },
+                {
+                    name = "Attach to process (codelldb)",
                     type = "codelldb",
                     request = "attach",
                     pid = require("dap.utils").pick_process,
                 },
                 {
-                    name = "Launch",
+                    name = "Launch (codelldb)",
                     type = "codelldb",
                     request = "launch",
                     program = function()
@@ -66,5 +102,15 @@ return {
                 },
             }
         end,
+        dependencies = {
+            {
+                "Weissle/persistent-breakpoints.nvim",
+                config = function()
+                    require("persistent-breakpoints").setup({
+                        load_breakpoints_event = { "BufReadPost" },
+                    })
+                end,
+            },
+        },
     },
 }
