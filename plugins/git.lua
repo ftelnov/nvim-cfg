@@ -68,6 +68,20 @@ return {
                 },
             })
         end,
+        keys = {
+            {
+                "<leader>hv",
+                function() require("gitsigns").preview_hunk() end,
+                desc = "Toggle Git preview for the current hunk.",
+            },
+            { "<leader>hr", function() require("gitsigns").reset_hunk() end, desc = "Git reset current hunk." },
+            { "<leader>hs", function() require("gitsigns").stage_hunk() end, desc = "Git stage current hunk." },
+            {
+                "<leader>sd",
+                function() require("gitsigns").toggle_deleted() end,
+                desc = "Toggle Git deleted lines.",
+            },
+        },
     },
     {
         "sindrets/diffview.nvim",

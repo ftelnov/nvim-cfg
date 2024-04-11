@@ -35,18 +35,6 @@ M.general = {
 
         ["<C-s>"] = { "<cmd>wa <CR>", "Save all files." },
 
-        ["<leader>sd"] = {
-            function() require("gitsigns").toggle_deleted() end,
-            "Show Git deleted lines",
-        },
-        ["<leader>gh"] = {
-            function() require("gitsigns").preview_hunk() end,
-            "Toggle Git preview for the current hunk.",
-        },
-        ["<leader>hr"] = {
-            function() require("gitsigns").reset_hunk() end,
-            "Reset current hunk",
-        },
         [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
         -- close quickfix ASAP.
