@@ -61,6 +61,7 @@ M.mason = {
         "yaml-language-server",
         "marksman",
         "black",
+        "taplo",
     },
 }
 

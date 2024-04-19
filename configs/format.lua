@@ -28,6 +28,7 @@ local default_cfg = {
         markdown = { prettier },
         json = { prettier },
         yaml = { "yamlfmt" },
+        toml = { "taplo" },
         rust = { "rustfmt", "injected" },
         go = { "gofmt" },
         sh = { "shfmt" },
