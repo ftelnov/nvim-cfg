@@ -12,7 +12,13 @@ return {
     config = function()
         require("neotest").setup({
             adapters = {
-                require("neotest-rust"),
+                require("neotest-rust")({
+                    dap_adapter = "gdb",
+                    args = { "--all-features" },
+                }),
+            },
+            summary = {
+                follow = true,
             },
         })
     end,
