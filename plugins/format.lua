@@ -5,7 +5,7 @@ return {
     "stevearc/conform.nvim",
     event = "VeryLazy",
     build = { utils.pip_global_pkg("fprettify") },
-    config = function() require("conform").setup(require("custom.configs.format").cfg) end,
+    config = function() require("conform").setup(require("custom.configs.format").setup()) end,
     keys = {
         {
             "<leader>fm",

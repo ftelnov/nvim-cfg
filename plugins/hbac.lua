@@ -4,6 +4,7 @@
 return {
     "axkirillov/hbac.nvim",
     lazy = false,
+    enabled = false,
     config = function()
         local autocmd = vim.api.nvim_create_autocmd
 

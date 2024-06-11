@@ -11,8 +11,10 @@ local rust_analyzer = {
         },
     },
 }
+local formatting = require("custom.configs.format")
 
 return {
     rust_analyzer = rust_analyzer,
-    format = require("custom.configs.format").cfg,
+    format = formatting.cfg,
+    setup_fmt = formatting.setup,
 }

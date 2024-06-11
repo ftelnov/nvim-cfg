@@ -62,6 +62,7 @@ M.mason = {
         "marksman",
         "black",
         "taplo",
+        "sqlfluff",
     },
 }
 

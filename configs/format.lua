@@ -1,24 +1,9 @@
 local prettier = { "prettierd", "prettier" }
-
-local fprettify = {
-    command = "fprettify",
-    args = { "--stdout", "--silent", "$FILENAME" },
-}
-
-local default_cfg = {
-    formatters = {
-        fprettify = fprettify,
-        rustfmt = {
-            command = "rustfmt",
-            args = { "--edition", "2021", "--emit", "stdout" },
-        },
-    },
+local cfg = {
     -- Map of filetype to formatters
     formatters_by_ft = {
         lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
         python = { "black", "isort" },
-        -- Use a sub-list to run only the first available formatter
         javascript = { prettier },
         typescript = { prettier },
         typescriptreact = { prettier },
@@ -34,6 +19,7 @@ local default_cfg = {
         sh = { "shfmt" },
         zsh = { "shfmt" },
         fortran = { "fprettify" },
+        sql = { "sqlfluff" },
     },
     format_after_save = function(bufnr)
         -- Disable with a global or buffer-local variable
@@ -44,6 +30,43 @@ local default_cfg = {
     end,
 }
 
+local function setup_formatter_config()
+    local conform_utils = require("conform.util")
+
+    local fprettify = {
+        command = "fprettify",
+        args = { "--stdout", "--silent", "$FILENAME" },
+    }
+
+    local sqlfluff = {
+        command = "sqlfluff",
+        args = { "fix", "-" },
+        stdin = true,
+        cwd = conform_utils.root_file({
+            ".sqlfluff",
+            "pep8.ini",
+            "pyproject.toml",
+            "setup.cfg",
+            "tox.ini",
+        }),
+        require_cwd = false,
+    }
+
+    return {
+        formatters = {
+            fprettify = fprettify,
+            rustfmt = {
+                command = "rustfmt",
+                args = { "--edition", "2021", "--emit", "stdout" },
+            },
+            sqlfluff = sqlfluff,
+        },
+        formatters_by_ft = cfg.formatters_by_ft,
+        format_after_save = cfg.format_after_save,
+    }
+end
+
 return {
-    cfg = default_cfg,
+    setup = setup_formatter_config,
+    cfg = cfg,
 }
