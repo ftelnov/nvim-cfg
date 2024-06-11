@@ -115,7 +115,7 @@ return {
                 },
                 lualine_c = {},
                 lualine_x = {},
-                lualine_y = { search_result, "filetype" },
+                lualine_y = { "copilot", search_result, "filetype" },
             }),
             inactive_sections = {
                 lualine_c = { "%f %y %m" },
