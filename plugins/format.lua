@@ -4,6 +4,7 @@ local utils = require("custom.utils")
 return {
     "stevearc/conform.nvim",
     event = "VeryLazy",
+    tag = "v5.9.0",
     build = { utils.pip_global_pkg("fprettify") },
     config = function() require("conform").setup(require("custom.configs.format").setup()) end,
     keys = {

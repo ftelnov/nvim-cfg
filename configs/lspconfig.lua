@@ -3,12 +3,7 @@ local nv_lsp = require("plugins.configs.lspconfig")
 local default_on_attach = nv_lsp.on_attach
 local capabilities = nv_lsp.capabilities
 
-local function on_attach(client, buf_nr)
-    default_on_attach(client, buf_nr)
-    if client.server_capabilities.inlayHintProvider then
-        vim.lsp.inlay_hint.enable(buf_nr, true)
-    end
-end
+local function on_attach(client, buf_nr) default_on_attach(client, buf_nr) end
 
 -- if you just want default config for the servers then put them in a table
 -- Rust is not placed here, as it is managed by the rust-tools.

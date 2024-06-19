@@ -4,21 +4,24 @@ return {
     {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
+        event = "VeryLazy",
+        opts = {},
+        cmd = "Trouble",
         keys = {
             {
-                "<leader>dl",
-                function() require("trouble").toggle("loclist") end,
-                desc = "Trouble Toggle local list",
+                "<leader>dq",
+                "<cmd>Trouble qflist toggle<cr>",
+                desc = "Quickfix List (Trouble)",
             },
             {
                 "<leader>dw",
-                function() require("trouble").toggle("workspace_diagnostics") end,
-                desc = "Trouble Toggle local list",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics of whole workspace (Trouble)",
             },
             {
                 "<leader>dd",
-                function() require("trouble").toggle("document_diagnostics") end,
-                desc = "Trouble Toggle Document Diagnostics",
+                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+                desc = "Buffer Diagnostics (Trouble)",
             },
         },
     },
@@ -44,7 +47,7 @@ return {
     },
     {
         "mrcjkb/rustaceanvim",
-        version = "^3",
+        version = "^4",
         ft = { "rust" },
         event = { "VeryLazy" },
         dependencies = { "neovim/nvim-lspconfig" },
@@ -59,10 +62,6 @@ return {
                     adapter = cfg.get_codelldb_adapter(lldb_path.codelldb_path, lldb_path.liblldb_path),
                 },
                 server = {
-                    on_attach = function(client, buf_nr)
-                        lsp_cfg.on_attach(client, buf_nr)
-                        vim.lsp.inlay_hint.enable(buf_nr, true)
-                    end,
                     capabilities = lsp_cfg.capabilities,
                     settings = configs.rust_analyzer,
                 },

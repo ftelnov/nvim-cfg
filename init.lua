@@ -69,5 +69,7 @@ vim.opt.fixeol = false
 vim.opt.termguicolors = true
 vim.opt.showcmd = false
 
+vim.lsp.inlay_hint.enable()
+
 _G.cfg = require("custom.configs")
 pcall(require, "custom.env")
